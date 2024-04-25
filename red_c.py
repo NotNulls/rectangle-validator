@@ -69,6 +69,13 @@ if __name__ == '__main__':
 
         d = fourth_point_coordinates(a, b, c)
 
+        ad = np.array(d) - np.array(a)  
+        bc = np.array(c) - np.array(b)
+
+        dot_product = np.dot(ad, bc)
+        
+        is_perpendicular = dot_product == 0
+
         diagonal_ad, diagonal_cb = find_diagonal_length(a, c, d)
 
         mid_ad, mid_bc = mid_point(a, b, c, d)
@@ -78,10 +85,14 @@ if __name__ == '__main__':
         if is_rectangle_result:
             print('True')
             print('Date točke formiraju pravokut.')
+            if is_perpendicular == 0:
+                print ('Dobijena figura je kvadrat.')
+            else:
+                print ('Dobijena figura nije kvadrat.')
         else:
             break
-            print('False')
-            print('Date točke ne formiraju pravokut.')
+            # print('False')
+            # print('Date točke ne formiraju pravokut.')
 
         is_point_in_rectangle(a, d, x)
         print(diagonal_ad)
