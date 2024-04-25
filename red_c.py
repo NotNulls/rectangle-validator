@@ -79,6 +79,7 @@ if __name__ == '__main__':
             print('True')
             print('Date točke formiraju pravokut.')
         else:
+            break
             print('False')
             print('Date točke ne formiraju pravokut.')
 
